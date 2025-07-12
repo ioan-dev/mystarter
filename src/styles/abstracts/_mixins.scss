@@ -1,11 +1,6 @@
 @use 'sass:math';
 @use 'functions' as *;
 
-
-@mixin fluid-text($max: 48, $min: 16) {
-  font-size: fluid($max, $min);
-}
-
 @mixin hide {
   opacity: 0;
   visibility: hidden;
@@ -49,6 +44,13 @@
 @mixin square($size) {
   width: $size;
   height: $size;
+}
+
+/// @param {string} $property - CSS-свойство (например, width, margin-top)
+/// @param {number} $px - значение в пикселях
+/// @param {number} $base-height - базовая высота экрана
+@mixin size-vh($property, $px, $base-height: 1080) {
+  #{$property}: calc(#{(100 / $base-height)} * #{if(unitless($px), px, unit($px))});
 }
 
 @mixin visually-hidden {
@@ -109,4 +111,6 @@
     }
   }
 }
+
+
 

@@ -6,9 +6,11 @@
   "scripts": {
     "start": "vite --open",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.4",
     "postcss-media-minmax": "^5.0.0",
     "postcss-pxtorem": "^6.1.0",
