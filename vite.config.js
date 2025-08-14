@@ -4,6 +4,9 @@ import path from 'path';
 
 export default defineConfig({
     base: '/starter/',
+    css: {
+        devSourcemap: true
+    },
     build: {
         outDir: 'dist',
         emptyOutDir: true,
